@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cristian Chávez - CV & Enlaces</title>
+    <!-- FontAwesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-hover: rgba(255, 255, 255, 0.1);
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #38bdf8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .link-container {
+            width: 100%;
+            max-width: 520px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Foto de perfil */
+        .avatar-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+        }
+
+        /* Información personal */
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .bio {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            line-height: 1.6;
+            padding: 0 10px;
+            text-align: center;
+        }
+
+        /* Pestañas / Secciones desplegables o informativas */
+        .section-box {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            padding: 18px 20px;
+            margin-bottom: 15px;
+            text-align: left;
+            backdrop-filter: blur(10px);
+        }
+
+        .section-box h3 {
+            font-size: 1rem;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-box p, .section-box li {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .section-box ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        /* Skills badges */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .skill-tag {
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        /* Lista de enlaces estilo Linkme */
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            border-radius: 14px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .link-btn:hover {
+            background: var(--card-hover);
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.2);
+        }
+
+        .link-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .link-content i {
+            font-size: 1.3rem;
+            width: 25px;
+            text-align: center;
+        }
+
+        .link-btn span {
+            font-size: 0.95rem;
+        }
+
+        .arrow-icon {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            transition: transform 0.2s;
+        }
+
+        .link-btn:hover .arrow-icon {
+            transform: translateX(3px);
+            color: var(--accent-color);
+        }
+
+        /* Colores específicos de marcas */
+        .link-btn.linkedin i { color: #0a66c2; }
+        .link-btn.github i { color: #f8fafc; }
+        .link-btn.email i { color: #38bdf8; }
+
+        /* Pie de página */
+        footer {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="link-container">
+        <!-- Foto de perfil real extraída de la imagen proporcionada -->
+        <div class="avatar-container">
+            <img src="data:image/jpeg;base64,..." alt="Cristian Chávez" class="avatar" id="profileImage">
+            <!-- Nota: Si prefieres enlazar una imagen local, puedes cambiar el src por el nombre de tu archivo de foto (ej. "foto.jpg") -->
+        </div>
+
+        <!-- Nombre y Puesto -->
+        <h1>Cristian Chávez</h1>
+        <p class="subtitle">Estudiante de Ingeniería en Sistemas</p>
+        
+        <!-- Acerca de mí (basado en la imagen 3) -->
+        <p class="bio">
+            Estudiante de Ingeniería en Sistemas y Ciencias de la Computación con una pasión por la tecnología, además de querer un mejora del desarrollo personal y laboral. Cinco semestres completados del pensum, cursando actualmente el sexto.[cite: 3]
+        </p>
+
+        <!-- Experiencia Laboral (basado en la imagen 2) -->
+        <div class="section-box">
+            <h3><i class="fa-solid fa-briefcase"></i> Experiencia Laboral</h3>
+            <p><strong>Área de Archivos - IGSS</strong> (Agosto - Actualidad)[cite: 2]</p>
+            <p style="margin-top: 5px; font-size: 0.85rem;">Digitación y Gestión de Expedientes Clínicos: Apoyo operativo en la digitalización e ingreso de registros médicos para la implementación e integración del sistema COEX Digital[cite: 2].</p>
+        </div>
+
+        <!-- Educación (basado en la imagen 2) -->
+        <div class="section-box">
+            <h3><i class="fa-solid fa-graduation-cap"></i> Educación</h3>
+            <p><strong>Ingeniería en Sistemas</strong>[cite: 2]</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Universidad Mariano Gálvez (2024 - Actualidad)[cite: 2]</p>
+        </div>
+
+        <!-- Tech Stack & Skills (basado en la imagen 2) -->
+        <div class="section-box">
+            <h3><i class="fa-solid fa-code"></i> Tech Stack & Skills</h3>
+            <div class="skills-grid">
+                <span class="skill-tag">C++</span>[cite: 2]
+                <span class="skill-tag">C#</span>[cite: 2]
+                <span class="skill-tag">SQL Básico</span>[cite: 2]
+                <span class="skill-tag">Trabajo en equipo</span>[cite: 2]
+                <span class="skill-tag">Tecnología</span>[cite: 2]
+            </div>
+        </div>
+
+        <!-- Botones de Redes Sociales y Contacto -->
+        <div class="links-list">
+            
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/cristian-ch%C3%A1vez-670684324/" target="_blank" class="link-btn linkedin">
+                <div class="link-content">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span>LinkedIn Profesional</span>
+                </div>
+                <i class="fa-solid fa-arrow-right arrow-icon"></i>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/Kriz-git" target="_blank" class="link-btn github">
+                <div class="link-content">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub Repositorios</span>
+                </div>
+                <i class="fa-solid fa-arrow-right arrow-icon"></i>
+            </a>
+
+            <!-- Correo electrónico añadido -->
+            <a href="mailto:krizgt531@gmail.com" class="link-btn email">
+                <div class="link-content">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>krizgt531@gmail.com</span>
+                </div>
+                <i class="fa-solid fa-arrow-right arrow-icon"></i>
+            </a>
+
+        </div>
+
+        <footer>
+            <p>© 2026 - Cristian Chávez</p>
+        </footer>
+    </div>
+
+    <script>
+        // Si descargas tu foto, guárdala en la misma carpeta como "foto.jpg" 
+        // y cambia la línea de abajo o el atributo src de la etiqueta img.
+        // document.getElementById('profileImage').src = 'foto.jpg';
+    </script>
+</body>
+</html>
